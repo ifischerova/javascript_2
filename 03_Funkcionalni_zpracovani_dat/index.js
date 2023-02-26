@@ -69,7 +69,7 @@ console.log(persons.every((person) => person.age > 18))
 // Transformace, agregace
 
 //a. pomoci filter vypis do konzole z numbers jen suda cisla
-const eventNumbers = numbers.filter((number) => number % 2 === 0);
+/*const eventNumbers = numbers.filter((number) => number % 2 === 0);
 console.log(eventNumbers);
 
 //b. pomoci filter najdi v persons dospele lidi a jejich seznam vypis do konzole
@@ -91,3 +91,46 @@ console.log(emails);
 //f. z pole persons pomoci map vytvorte pro kazdou osobu <li>Petr (16)</li> a vysledek ulozte do pole list, ktere vypiste do konzole.
 const list = persons.map((person) => `<li> ${person.name} (${person.age})</li>`)
 console.log(list);
+*/
+
+// Agregace
+// a. Pomoci map a join vytvorte z persons HTML seznam a pomoci innerHTML ho vlozte do stranky.
+/*
+const list = persons.map((person) => `<li> ${person.name} (${person.age})</li>`).join('')
+console.log('<ul>' + list + '</ul>');
+
+document.body.innerHTML = '<ul>' + list + '</ul>';
+*/
+
+// b. To stejne jako v a., ale jen pro dospele
+const listAdults = persons
+    .filter((person) => person.age >= 18)
+    .map((person) => `<li> ${person.name} (${person.age})</li>`)
+    .join('')
+console.log('<ul>' + listAdults + '</ul>');
+
+document.body.innerHTML = '<ul>' + listAdults + '</ul>';
+
+//c. To stejne jako v b., ale pridat class dle pohlavi dane osoby
+/*const nonBinary = persons
+    .filter((person) => person.gender !== 'male' && person.gender !== 'female');
+console.log(nonBinary)*/
+
+const listAdultsWithCSSBinary = persons
+    .filter((person) => person.age >= 18)
+    .filter((person) => person.gender === 'male' || person.gender === 'female')
+    .map((person) => `<li class='${person.gender}'> ${person.name} (${person.age})</li>`)
+    .join('')
+
+console.log('<ul>' + listAdultsWithCSSBinary + '</ul>');
+
+const listAdultsWithCSSNonBinary = persons
+    .filter((person) => person.age >= 18)
+    .filter((person) => person.gender !== 'male' && person.gender !== 'female')
+    .map((person) => `<li class='${person.gender}'> ${person.name} (${person.age})</li>`)
+    .join('')
+
+console.log('<ul>' + listAdultsWithCSSBinary + '</ul>');
+
+document.body.innerHTML = '<ul>' + listAdultsWithCSSBinary + '</ul>' ;
+
