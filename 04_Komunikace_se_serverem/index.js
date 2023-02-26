@@ -1,5 +1,5 @@
 // 1. Vychod a zapad Slunce
-/*const button = document.querySelector('.button');
+const button = document.querySelector('.button');
 
 button.addEventListener('click', () => {
 fetch('https://api.sunrise-sunset.org/json?lat=50&lng=14.5')
@@ -13,18 +13,18 @@ fetch('https://api.sunrise-sunset.org/json?lat=50&lng=14.5')
         <p>Zapad slunce: ${sunset}</p>
         `;
     });
-});*/
+});
 
 
 // 2. Generator hesel
-/*const hesloApi = fetch('https://apps.kodim.cz/daweb/trening-api/apis/passwords?length=8')
+const hesloApi = fetch('https://apps.kodim.cz/daweb/trening-api/apis/passwords?length=8')
     .then((response) => {
         return response.json();
     })
     .then((data) => {
         console.log(data);
     })
-*/
+
 
 
 
@@ -46,6 +46,7 @@ fetch(`https://apps.kodim.cz/daweb/trening-api/apis/passwords?length=${passwordL
 });
 
 //TODO uzivatel si zada delku hesla do formularoveho pole
+
 
 
 
