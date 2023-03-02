@@ -1,14 +1,12 @@
 export const Header = (props) => {
-    const {title, link} = props
+    const {title, links} = props;
+
+    const anchor = links.map((link) => `<a href="#">${link}</a>`).join('');
 
     return ` <header>
             <h1 class="site-title">${title}</h1>
                 <nav>
-                    <a href="#">${link}</a>
-                    <a href="#">${link}</a>
-                    <a href="#">${link}</a>
-                    <a href="#">${link}</a>
-                    <a href="#">${link}</a>
+                    ${ anchor }
                 </nav>
         </header>
     `

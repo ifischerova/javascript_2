@@ -20,7 +20,7 @@ const pageData = {
 const renderPage = (pageData) => {  
     const page = document.querySelector('#app'); 
 
-    page.innerHTML = Header({title:pageData.title, link:pageData.links.map((link) => link)}) + Intro({heading:pageData.heading, text:pageData.text}) + Pose({img:pageData.src})
+    page.innerHTML = Header({title:pageData.title, links:pageData.links}) + Intro({heading:pageData.heading, text:pageData.text}) + Pose({img:pageData.src})
 }
 
 renderPage(pageData);
