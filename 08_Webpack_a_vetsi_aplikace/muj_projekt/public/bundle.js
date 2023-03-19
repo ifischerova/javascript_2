@@ -1,0 +1,1 @@
+(()=>{const e=e=>`Hello ${e}`;document.querySelector("h1").textContent=e("Iva"),console.log(e("Iva"))})();
